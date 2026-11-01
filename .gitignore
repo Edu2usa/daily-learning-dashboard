@@ -3,3 +3,4 @@ __pycache__/
 .public-data-*
 data.old/
 scripts/publish.sh
+.publish.log
