@@ -510,40 +510,6 @@ def write_site(out: Path, pages: dict, bots: dict) -> None:
                                 encoding="utf-8")
 
 
-WORKFLOW = """name: Deploy Daily Learning to GitHub Pages
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Generate site
-        run: python3 scripts/build_site.py --source data --source-base https://github.com/Edu2usa/daily-learning-dashboard/tree/main/data
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-"""
-
 
 def main(argv: list[str] | None = None) -> int:
     project = Path(__file__).resolve().parent.parent

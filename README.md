@@ -56,8 +56,8 @@ the source tree is byte-for-byte unchanged after a build.
 ## Deploy (GitHub Pages)
 
 1. Sync the allowlisted public learning files into `data/`.
-2. Settings → Pages → Source: **GitHub Actions**.
-3. The official workflow at `.github/workflows/pages.yml` regenerates `docs/` from `data/` on every push to `main` and deploys it.
+2. Settings → Pages → Source: **Deploy from a branch**.
+3. Select `main` and `/docs`; the local publisher regenerates and pushes both `data/` and `docs/`.
 4. All URLs in the generated site are relative, so it works at any Pages base
    path. `docs/.nojekyll` is included so Jekyll processing is skipped.
 5. A PWA manifest and icons (`manifest.webmanifest`, `icons/`) make the site
