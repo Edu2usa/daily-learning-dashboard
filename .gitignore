@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.public-data-*
+data.old/
+scripts/publish.sh

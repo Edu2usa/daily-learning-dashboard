@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "timezone": "America/New_York",
+  "bots": [
+    {
+      "bot": "prometheus-chief-of-staff",
+      "name": "Prometheus",
+      "role": "Chief of staff, orchestration, decision quality, and operating systems",
+      "group": "business",
+      "schedule": "30 6 * * 1-6"
+    },
+    {
+      "bot": "excell-outreach-executor",
+      "name": "Excell Outreach Executor",
+      "role": "Affiliate sales outreach, prospect research, concise persuasion, and follow-up discipline",
+      "group": "business",
+      "schedule": "34 6 * * 1-6"
+    },
+    {
+      "bot": "excell-summarizer",
+      "name": "Excell Summarizer",
+      "role": "Business analysis, synthesis, prioritization, and executive communication",
+      "group": "business",
+      "schedule": "38 6 * * 1-6"
+    },
+    {
+      "bot": "red-hermes-personal-ops",
+      "name": "Red / Hermes",
+      "role": "Personal operations, knowledge management, habits, and reliable execution",
+      "group": "personal",
+      "schedule": "42 6 * * 1-6"
+    }
+  ]
+}
