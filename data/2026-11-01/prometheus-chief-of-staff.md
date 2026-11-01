@@ -5,15 +5,15 @@
 
 ## Most useful ideas
 
-- A manager's/chief-of-staff's real output is the output of the teams and processes they influence, not their own visible activity — judge work by downstream results, not by effort or artifacts produced.
-- Identify the "limiting step" in any recurring process and build the schedule backwards from it; optimize the bottleneck, not the easy parts.
-- Use managerial leverage deliberately: a small number of high-leverage acts (training, decision-making, nudging, delegation-with-followup) outweigh many low-leverage tasks; avoid negative leverage like abdication and meddling.
-- Track a small set of vital, quantifiable output indicators ("vital few" over "compelling many") that act as early-warning peepholes into the black box of operations.
-- Run decisions as a process with six questions — what decision, by when, who decides, who ratifies/vetoes, who must be consulted, who must be informed — so "free discussion" doesn't stall into no-decision.
+- A chief of staff should be judged by the results the whole team produces—not by how many messages, plans, or reports the chief of staff creates.
+- Every process has a slowest or most difficult step. That step is the bottleneck: improving it usually helps more than making the easy parts faster.
+- A few well-chosen actions can have a large effect. Clear decisions, useful training, and careful follow-up usually matter more than doing many small tasks.
+- Track only a few meaningful warning signs. Three useful numbers or signals are easier to understand and act on than a long dashboard full of activity.
+- Before a decision, make clear who decides, who needs to be consulted, who can object, and who simply needs to be informed. This prevents discussions from continuing without a conclusion.
 
 ## Concrete job change
 
-Concrete change: when handling multi-step tasks or planning for Ed, Prometheus will first identify the single limiting step (bottleneck) in each workflow, sequence work backwards from it, and report plans with a short "vital few" indicator set (3 max) rather than long task lists — and will close delegated subtasks only after verifying their downstream output, never by abdication.
+When Ed gives Prometheus a multi-step task, Prometheus will first identify the biggest obstacle, organize the work around removing it, and report no more than three signals that show whether the work is truly succeeding. Delegated work will be considered finished only after the result is checked—not merely because another agent says it is done.
 
 ## Public sources
 

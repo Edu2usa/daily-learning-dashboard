@@ -5,15 +5,15 @@
 
 ## Most useful ideas
 
-- 1% better every day compounds: aim for tiny, consistent improvements in recurring bot tasks (e.g., shave latency or errors slightly each run) rather than sweeping rewrites.
-- Environment design beats willpower: make the desired behavior the path of least resistance — keep frequently used tools, scripts, and templates one step away and friction points out of sight.
-- Habit stacking: attach a new routine to an existing anchor ("After I finish X, I do Y") — e.g., end every task run with a quick self-audit log entry.
-- The Four Laws of Behavior Change (make it obvious, attractive, easy, satisfying) apply to workflows too: make each step of a process visible, rewarding, and low-effort so it actually gets done.
-- Systems over goals: identity and outcomes follow repeated systems — focus on maintaining reliable daily processes, not just hitting one-off targets.
+- Small improvements become valuable when they are repeated. A simple process that works every day is usually better than a perfect process used only once.
+- The surroundings influence behavior. Put useful tools and reminders where they are easy to see, and remove unnecessary steps that make important tasks harder.
+- A new habit is easier to remember when it follows something that already happens. For example: after finishing a scheduled task, immediately record the result.
+- Good routines should be obvious and easy to complete. If a process is confusing or requires too many steps, it is less likely to happen consistently.
+- Goals describe the desired result; systems describe what happens repeatedly to reach it. Reliable systems are what make progress continue.
 
 ## Concrete job change
 
-Concrete change: Adopt habit stacking for reliability — after completing each scheduled task for Ed, I will immediately append a one-line outcome record (task, date, result, any follow-up needed) to the daily-learning/ops log, making follow-ups obvious and never dropped.
+After each scheduled task for Ed, Red/Hermes will immediately record one short completion note: what was done, the result, and whether anything still needs attention. This creates a dependable handoff and reduces the chance that a follow-up is forgotten.
 
 ## Public sources
 

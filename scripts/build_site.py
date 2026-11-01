@@ -19,6 +19,7 @@ import struct
 import sys
 import zlib
 from pathlib import Path
+from urllib.parse import urlparse
 
 # --------------------------------------------------------------------------
 # Parsing
@@ -282,24 +283,44 @@ def render_card(entry: dict, bot: dict, base: str, missing: bool = False) -> str
         return (f'<article class="card missing" data-bot="{e(bot["bot"])}" data-group="{e(bot["group"])}">'
                 f'<span class="tag missing">Missing filing</span> '
                 f'<h3>{e(bot["name"])}</h3>'
-                f'<p class="meta">No learning filed for {e(entry["date"])}. '
-                f'The morning brief reports missing files rather than inventing content.</p></article>')
+                f'<p class="meta">No learning note was filed for {e(human_date(entry["date"]))}. '
+                f'Nothing is filled in or guessed when a bot misses a day.</p></article>')
     group = bot.get("group", "business")
     src = source_link(entry, base)
     ideas = "".join(f"<li>{e(i)}</li>" for i in entry["ideas"])
-    sources = "".join(f'<li><a href="{e(u)}" rel="noopener">{e(u)}</a></li>' for u in entry["sources"])
+    sources = "".join(f'<li><a href="{e(u)}" rel="noopener">{e(source_name(u))}</a></li>' for u in entry["sources"])
     return (f'<article class="card" data-bot="{e(bot["bot"])}" data-group="{e(group)}" '
             f'data-title="{e(entry["title"].lower())}" data-text="{e((entry["title"] + " " + entry["author"] + " " + " ".join(entry["ideas"])).lower())}">'
             f'<span class="tag{" personal" if group == "personal" else ""}">{e("Personal" if group == "personal" else "Business")}</span> '
             f'<h3>{e(entry["title"])} — {e(entry["author"])}</h3>'
-            f'<p class="meta">{e(bot["name"])} · {e(entry["date"])} · source file: {src}</p>'
-            f'<p><b>Most useful ideas</b></p><ul>{ideas}</ul>'
-            f'<div class="change"><b>Concrete job change:</b> {e(entry["change"])}</div>'
-            f'<p class="meta"><b>Public sources:</b></p><ul>{sources}</ul></article>')
+            f'<p class="meta">Studied by {e(bot["name"])} · {e(human_date(entry["date"]))}</p>'
+            f'<p><b>What this bot learned</b></p><ul>{ideas}</ul>'
+            f'<div class="change"><b>How this will help you:</b> {e(entry["change"])}</div>'
+            f'<p class="meta"><b>Where these ideas came from</b></p><ul>{sources}</ul></article>')
 
 
-NAV = [("index.html", "Today", "index.html"), ("archive.html", "Archive", "archive.html"),
-       ("by-bot.html", "By Bot", "by-bot.html"), ("books.html", "Books Read", "books.html")]
+NAV = [("index.html", "Today", "index.html"), ("archive.html", "Previous days", "archive.html"),
+       ("by-bot.html", "Team members", "by-bot.html"), ("books.html", "Book list", "books.html")]
+
+
+def human_date(value: str) -> str:
+    day = dt.date.fromisoformat(value)
+    return f"{day.strftime('%B')} {day.day}, {day.year}"
+
+
+def source_name(url: str) -> str:
+    host = urlparse(url).netloc.lower().removeprefix("www.")
+    return host or "Public source"
+
+
+def schedule_name(expr: str) -> str:
+    parts = expr.split()
+    if len(parts) == 5 and parts[4] == "1-6":
+        minute, hour = int(parts[0]), int(parts[1])
+        suffix = "AM" if hour < 12 else "PM"
+        shown_hour = hour % 12 or 12
+        return f"Monday–Saturday at {shown_hour}:{minute:02d} {suffix} Eastern"
+    return "Regular weekday learning schedule"
 
 
 def shell(title: str, active: str, body: str, description: str) -> str:
@@ -322,13 +343,12 @@ def shell(title: str, active: str, body: str, description: str) -> str:
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
 <header class="site"><h1>Daily Learning</h1>
-<p>One legitimate public-source book study per real LLM-backed bot, Monday–Saturday.</p></header>
+<p>Practical ideas your AI team is learning—and how each bot will use them for you.</p></header>
 <nav aria-label="Site">{nav}</nav>
 <main id="main">
 {body}
 </main>
-<footer>Static site · no tracking, no backend, no private data ·
-built from the public <a href="https://github.com/Edu2usa/daily-learning-dashboard/tree/main/data">daily-learning</a> source tree.</footer>
+<footer>This is a read-only learning library. It contains no private workspace data and uses no tracking. <a href="https://github.com/Edu2usa/daily-learning-dashboard/tree/main/data">View the public source notes.</a></footer>
 </body>
 </html>"""
 
@@ -336,7 +356,7 @@ built from the public <a href="https://github.com/Edu2usa/daily-learning-dashboa
 def searchbar(page_id: str) -> str:
     return ('<div class="searchbar" role="search">'
             '<label class="sr-only" for="q-' + page_id + '">Filter cards</label>'
-            f'<input id="q-{page_id}" type="search" placeholder="Filter ideas, books, bots…" autocomplete="off">'
+            f'<input id="q-{page_id}" type="search" placeholder="Search books, ideas, or bots…" autocomplete="off">'
             '<label class="sr-only" for="grp-' + page_id + '">Group</label>'
             '<select id="grp-' + page_id + '"><option value="">All groups</option>'
             '<option value="business">Business</option><option value="personal">Personal</option></select>'
@@ -356,13 +376,13 @@ def build_pages(source: Path, base: str) -> dict[str, str]:
     today = stats["dates"][-1] if stats["dates"] else None
     parts = []
     parts.append('<section aria-label="Stats"><div class="stats">'
-                 f'<div class="stat"><b>{stats["filed_days"]}</b><span>Days filed</span></div>'
-                 f'<div class="stat"><b>{stats["streak"]}</b><span>Current streak (days)</span></div>'
-                 f'<div class="stat"><b>{stats["total_entries"]}</b><span>Entries</span></div>'
-                 f'<div class="stat"><b>{len(bots)}</b><span>Active bots</span></div>'
+                 f'<div class="stat"><b>{stats["filed_days"]}</b><span>Learning days</span></div>'
+                 f'<div class="stat"><b>{stats["streak"]}</b><span>Day streak</span></div>'
+                 f'<div class="stat"><b>{stats["total_entries"]}</b><span>Books studied</span></div>'
+                 f'<div class="stat"><b>{len(bots)}</b><span>Bots learning</span></div>'
                  '</div></section>')
     if today:
-        parts.append(f'<h2 id="today">Today — {e(today)}</h2>')
+        parts.append(f'<h2 id="today">What the team learned — {e(human_date(today))}</h2>')
         parts.append(searchbar("today"))
         parts.append('<h2 id="business">Business bots</h2>')
         for bot_id, bot in bots.items():
@@ -389,9 +409,9 @@ def build_pages(source: Path, base: str) -> dict[str, str]:
                                 "\n".join(parts), "Daily book study dashboard for a team of LLM bots.")
 
     # ---- archive.html ----
-    parts = [f'<h2>Archive — {stats["filed_days"]} day(s)</h2>', searchbar("archive")]
+    parts = [f'<h2>Previous learning days — {stats["filed_days"]}</h2>', searchbar("archive")]
     for date in reversed(stats["dates"]):
-        parts.append(f'<p class="day-label" id="{e(date)}">{e(date)}</p>')
+        parts.append(f'<p class="day-label" id="{e(date)}">{e(human_date(date))}</p>')
         for bot_id, bot in bots.items():
             entry = days[date].get(bot_id)
             if entry:
@@ -402,13 +422,13 @@ def build_pages(source: Path, base: str) -> dict[str, str]:
                                   "\n".join(parts), "Full archive of daily learning filings.")
 
     # ---- by-bot.html ----
-    parts = ["<h2>By bot</h2>", searchbar("bybot")]
+    parts = ["<h2>What each team member has learned</h2>", searchbar("bybot")]
     for bot_id, bot in bots.items():
         parts.append(f'<h3 class="day-label" id="bot-{e(bot_id)}">{e(bot["name"])} '
                      f'<span class="tag{" personal" if bot["group"] == "personal" else ""}">'
                      f'{e("Personal" if bot["group"] == "personal" else "Business")}</span></h3>'
-                     f'<p class="meta">{e(bot["role"])} · schedule <code>{e(bot["schedule"])}</code> · '
-                     f'{stats["per_bot"].get(bot_id, 0)} filing(s)</p>')
+                     f'<p class="meta">{e(bot["role"])} · {e(schedule_name(bot["schedule"]))} · '
+                     f'{stats["per_bot"].get(bot_id, 0)} book(s) studied</p>')
         for date in reversed(stats["dates"]):
             entry = days[date].get(bot_id)
             if entry:
@@ -429,8 +449,8 @@ def build_pages(source: Path, base: str) -> dict[str, str]:
                     f"<td>{e(r['title'])}</td><td>{e(r['author'])}</td></tr>")
     if not rows:
         rows.append('<tr><td colspan="4">No books recorded yet.</td></tr>')
-    pages["books.html"] = shell("Daily Learning — Books Read", "books.html",
-                                '<h2>Books Read</h2><table class="books"><thead><tr>'
+    pages["books.html"] = shell("Daily Learning — Book List", "books.html",
+                                '<h2>Every book the team has studied</h2><table class="books"><thead><tr>'
                                 '<th scope="col">Date</th><th scope="col">Bot</th>'
                                 '<th scope="col">Title</th><th scope="col">Author</th></tr></thead>'
                                 f'<tbody>{"".join(rows)}</tbody></table>',

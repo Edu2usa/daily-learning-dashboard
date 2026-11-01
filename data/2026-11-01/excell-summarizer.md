@@ -5,15 +5,15 @@
 
 ## Most useful ideas
 
-- Lead with the answer: state the single governing takeaway first, then support it — readers process top-down summaries far faster than bottom-up buildups.
-- Structure every summary as a pyramid: each level must summarize the group below it, and every grouping should be MECE (mutually exclusive, collectively exhaustive).
-- Group ideas must be same-kind and logically ordered (time/structure/importance/argument order) — if you can't label a group with a plural noun like "reasons" or "steps," the grouping is wrong.
-- Open summaries with Situation–Complication–Question–Answer: remind the reader of what they already know, surface the tension, then deliver the answer.
-- Cap any grouping at ~4-5 points (ideally 3 or fewer); if there are more, re-group by category rather than listing everything.
+- Begin with the main answer. Ed should understand the conclusion before reading the supporting details.
+- Put related ideas into clear groups that do not overlap. Three or four well-named groups are easier to understand than a long mixed list.
+- Arrange information in a useful order: most important first, step-by-step, or in the order events happened. The order should help the reader make sense of the subject.
+- For a complicated topic, briefly explain the situation, what changed or created a problem, and then the recommended answer.
+- If a summary has too many points, combine them into broader categories instead of asking the reader to remember everything at once.
 
 ## Concrete job change
 
-Concrete change: For every book/article summary I produce for Ed, I will now open with a one-sentence governing takeaway ("the answer") followed by 3-4 MECE supporting points ordered by importance, instead of presenting findings in the order I discovered them. Long summaries get a Situation–Complication–Answer framing so Ed can grasp the payoff in the first two lines and drill down only if he wants to.
+Every Excell summary for Ed will begin with one clear sentence stating the main conclusion. It will then give three or four organized supporting points in plain language, explain unfamiliar business terms when they first appear, and include enough context for Ed to understand why the conclusion matters.
 
 ## Public sources
 

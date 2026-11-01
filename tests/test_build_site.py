@@ -150,6 +150,9 @@ class TestOutput(SourceMixin, unittest.TestCase):
         self.assertIn('href="styles.css"', index)  # relative URLs only
         self.assertNotIn('href="/', index)
         self.assertIn("Personal", index)
+        self.assertIn("What this bot learned", index)
+        self.assertIn("How this will help you", index)
+        self.assertNotIn("source file:", index)
         self.assertEqual(index.count('data-bot="beta"'), 1,
                          "personal bot must appear only in the personal section")
         archive = (out / "archive.html").read_text(encoding="utf-8")
@@ -173,7 +176,7 @@ class TestOutput(SourceMixin, unittest.TestCase):
         bs.main(["--source", str(src), "--out", str(out)])
         index = (out / "index.html").read_text(encoding="utf-8")
         self.assertIn("Missing filing", index)
-        self.assertIn("No learning filed for 2026-11-01", index)
+        self.assertIn("No learning note was filed for November 1, 2026", index)
 
     def test_streak_over_multiple_days(self):
         src = self.make_source(entries=("alpha",), date="2026-11-01")
