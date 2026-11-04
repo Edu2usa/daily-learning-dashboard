@@ -29,6 +29,48 @@
       "role": "Personal operations, knowledge management, habits, and reliable execution",
       "group": "personal",
       "schedule": "42 6 * * 1-6"
+    },
+    {
+      "bot": "researcher",
+      "name": "Researcher",
+      "role": "Evidence gathering, source evaluation, fact-checking, and clear research synthesis",
+      "group": "business",
+      "schedule": "46 6 * * 1-6"
+    },
+    {
+      "bot": "reviewer",
+      "name": "Reviewer",
+      "role": "Quality assurance, risk detection, verification, and constructive critique",
+      "group": "business",
+      "schedule": "50 6 * * 1-6"
+    },
+    {
+      "bot": "devops",
+      "name": "DevOps",
+      "role": "System reliability, observability, incident response, and safe automation",
+      "group": "business",
+      "schedule": "54 6 * * 1-6"
+    },
+    {
+      "bot": "finance",
+      "name": "Finance",
+      "role": "Financial controls, subscription oversight, cost analysis, and accurate reporting",
+      "group": "business",
+      "schedule": "58 6 * * 1-6"
+    },
+    {
+      "bot": "cardio-endo-health-sentinel",
+      "name": "Cardio/Endocrine Health Sentinel",
+      "role": "Evidence-based health monitoring, medication and symptom record quality, and safe escalation",
+      "group": "personal",
+      "schedule": "2 7 * * 1-6"
+    },
+    {
+      "bot": "affiliate-drafter",
+      "name": "Affiliate Drafter",
+      "role": "Concise affiliate copy, offer positioning, compliance-aware persuasion, and human tone",
+      "group": "business",
+      "schedule": "6 7 * * 1-6"
     }
   ]
 }
