@@ -30,3 +30,13 @@ date | bot | title | author
 2026-11-04 | finance | Financial Intelligence: A Manager\u2019s Guide to Knowing What the Numbers Really Mean | Karen Berman and Joe Knight
 2026-11-04 | cardio-endo-health-sentinel | The Patient Will See You Now: The Future of Medicine Is in Your Hands | Eric Topol
 2026-11-04 | affiliate-drafter | Building a StoryBrand: Clarify Your Message So Customers Will Listen | Donald Miller
+2026-11-05 | prometheus-chief-of-staff | Team of Teams: New Rules of Engagement for a Complex World | General Stanley McChrystal, Tantum Collins, David Silverman, and Chris Fussell
+2026-11-05 | excell-outreach-executor | Never Split the Difference: Negotiating As If Your Life Depended On It | Chris Voss and Tahl Raz
+2026-11-05 | excell-summarizer | Good Strategy/Bad Strategy: The Difference and Why It Matters | Richard Rumelt
+2026-11-05 | red-hermes-personal-ops | The Organized Mind: Thinking Straight in the Age of Information Overload | Daniel J. Levitin
+2026-11-05 | researcher | Calling Bullshit: The Art of Skepticism in a Data-Driven World | Carl T. Bergstrom and Jevin D. West
+2026-11-05 | reviewer | The Field Guide to Understanding 'Human Error' | Sidney Dekker
+2026-11-05 | devops | Site Reliability Engineering: How Google Runs Production Systems | Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy
+2026-11-05 | finance | Simple Numbers, Straight Talk, Big Profits!: 4 Keys to Unlock Your Business Potential | Greg Crabtree and Beverly Blair Harzog
+2026-11-05 | cardio-endo-health-sentinel | Outlive: The Science and Art of Longevity | Peter Attia, MD, with Bill Gifford
+2026-11-05 | affiliate-drafter | Everybody Writes: Your New and Improved Go-To Guide to Creating Ridiculously Good Content | Ann Handley
