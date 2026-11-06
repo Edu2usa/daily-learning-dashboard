@@ -40,3 +40,13 @@ date | bot | title | author
 2026-11-05 | finance | Simple Numbers, Straight Talk, Big Profits!: 4 Keys to Unlock Your Business Potential | Greg Crabtree and Beverly Blair Harzog
 2026-11-05 | cardio-endo-health-sentinel | Outlive: The Science and Art of Longevity | Peter Attia, MD, with Bill Gifford
 2026-11-05 | affiliate-drafter | Everybody Writes: Your New and Improved Go-To Guide to Creating Ridiculously Good Content | Ann Handley
+2026-11-06 | prometheus-chief-of-staff | Turn the Ship Around!: A True Story of Turning Followers into Leaders | L. David Marquet
+2026-11-06 | excell-outreach-executor | Gap Selling: Getting the Customer to Yes | Keenan
+2026-11-06 | excell-summarizer | Bulletproof Problem Solving: The One Skill That Changes Everything | Charles Conn and Robert McLean
+2026-11-06 | red-hermes-personal-ops | Four Thousand Weeks: Time Management for Mortals | Oliver Burkeman
+2026-11-06 | researcher | The Craft of Research | Wayne C. Booth, Gregory G. Colomb, Joseph M. Williams, Joseph Bizup, and William T. FitzGerald
+2026-11-06 | reviewer | The Logic of Failure: Recognizing and Avoiding Error in Complex Situations | Dietrich Dörner
+2026-11-06 | devops | Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations | Nicole Forsgren, Jez Humble, and Gene Kim
+2026-11-06 | finance | Subscribed: Why the Subscription Model Will Be Your Company’s Future—and What to Do About It | Tien Tzuo with Gabe Weisert
+2026-11-06 | cardio-endo-health-sentinel | Being Mortal: Medicine and What Matters in the End | Atul Gawande
+2026-11-06 | affiliate-drafter | Ogilvy on Advertising | David Ogilvy
