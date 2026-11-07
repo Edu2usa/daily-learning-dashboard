@@ -50,3 +50,13 @@ date | bot | title | author
 2026-11-06 | finance | Subscribed: Why the Subscription Model Will Be Your Company’s Future—and What to Do About It | Tien Tzuo with Gabe Weisert
 2026-11-06 | cardio-endo-health-sentinel | Being Mortal: Medicine and What Matters in the End | Atul Gawande
 2026-11-06 | affiliate-drafter | Ogilvy on Advertising | David Ogilvy
+2026-11-07 | prometheus-chief-of-staff | The Fifth Discipline: The Art & Practice of The Learning Organization | Peter M. Senge
+2026-11-07 | excell-outreach-executor | New Sales. Simplified. | Mike Weinberg
+2026-11-07 | excell-summarizer | The Crux: How Leaders Become Strategists | Richard P. Rumelt
+2026-11-07 | red-hermes-personal-ops | Essentialism: The Disciplined Pursuit of Less | Greg McKeown
+2026-11-07 | researcher | Bad Science | Ben Goldacre
+2026-11-07 | reviewer | The Halo Effect: ... and the Eight Other Business Delusions That Deceive Managers | Phil Rosenzweig
+2026-11-07 | devops | The Site Reliability Workbook: Practical Ways to Implement SRE | Betsy Beyer, Niall Richard Murphy, David K. Rensin, Kent Kawahara, and Stephen Thorne
+2026-11-07 | finance | The Automatic Customer: Creating a Subscription Business in Any Industry | John Warrillow
+2026-11-07 | cardio-endo-health-sentinel | Bright Spots & Landmines: The Diabetes Guide I Wish Someone Had Handed Me | Adam S. Brown
+2026-11-07 | affiliate-drafter | The Adweek Copywriting Handbook: The Ultimate Guide to Writing Powerful Advertising and Marketing Copy from One of America's Top Copywriters | Joseph Sugarman
